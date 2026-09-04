@@ -20,6 +20,6 @@ Read PLAN.md first; it holds the architecture and the verified reasons behind ea
 - UX model (from the r/place-clone survey, see PLAN.md notes): pick a color once, then every click or tap paints; fly-in when too far out; ghost preview drawn in the shader; docked palette. No pick-a-pixel or confirm step anywhere, the user rejected it.
 - Seeding only runs on a fresh data dir; re-seeding means moving `data/` aside and restarting `place.service`. Default seed is the real 2022 canvas from `art/place2022.idx.gz` (`src/server/art.ts`); `src/server/seed.ts` is the procedural fallback. Wikimedia's "final canvas" PNGs are blank placeholders; the placeAtlas GitHub repos hold the real ones.
 
-## Deployment on this machine
-- `place.service` (systemd user unit, `~/.config/systemd/user/place.service`) runs the production server on :3000 from this directory; `systemctl --user restart place` after server changes.
-- `mesh serve omarchy 3000 --at /place` publishes it at https://omarchy.mesh.shaulavo.dev/place (tailnet only). The proxy strips `/place`, so the client must be built with `bun run build:mesh` (BASE_PATH=/place/). Static files are read per request; no restart needed after a client build.
+## Deployment
+- Machine-specific deployment notes (service name, reverse-proxy route) live in `CLAUDE.local.md`, which is gitignored.
+- When served under a route prefix, build the client with `bun run build:mesh` (BASE_PATH=/place/); the server strips the prefix for direct access too.
