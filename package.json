@@ -1,0 +1,35 @@
+{
+  "name": "place",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --silent dev:all",
+    "dev:all": "bun --bun vite & bun --watch src/server/index.ts; wait",
+    "dev:client": "bun --bun vite",
+    "dev:server": "bun --watch src/server/index.ts",
+    "build": "vite build",
+    "start": "NODE_ENV=production bun src/server/index.ts",
+    "test": "bun test",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "loadtest": "bun scripts/loadtest.ts",
+    "smoke": "bun scripts/smoke.ts",
+    "gpuprobe": "bun scripts/gpuprobe.ts",
+    "build:mesh": "BASE_PATH=/place/ vite build"
+  },
+  "dependencies": {
+    "@elysiajs/eden": "1.4.9",
+    "@solidjs/web": "2.0.0-rc.6",
+    "elysia": "1.4.30",
+    "solid-js": "2.0.0-rc.6"
+  },
+  "devDependencies": {
+    "@solidjs/vite-plugin": "3.0.0-next.38",
+    "@types/bun": "latest",
+    "@webgpu/types": "latest",
+    "playwright": "^1.62.1",
+    "sharp": "^0.35.4",
+    "typescript": "^5.9.2",
+    "vite": "^8.2.2"
+  }
+}

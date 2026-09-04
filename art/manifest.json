@@ -1,0 +1,20 @@
+[
+  {
+    "name": "place2022",
+    "src": "art/cache/atlas2022-place30ex-final.png",
+    "w": 2000,
+    "h": 2000,
+    "dither": false,
+    "out": "gz",
+    "license": "r/place 2022 final canvas (collective work by Reddit users), via placeAtlas/atlas-2022 web/_img/canvas/place30ex/final.png"
+  },
+  {
+    "name": "place2023",
+    "src": "art/cache/atlas2023-tfc-base.png",
+    "w": 3000,
+    "h": 2000,
+    "dither": false,
+    "out": "gz",
+    "license": "r/place 2023 final canvas (collective work by Reddit users), via placeAtlas/atlas-2023 web/_img/canvas/tfc/base.png"
+  }
+]
